@@ -1,0 +1,24 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:entity_hurt_player",
+        "conditions": {
+          "player": {
+            "type_specific": {
+              "type": "player",
+              "stats": [
+                {
+                  "type": "minecraft:custom",
+                  "stat": "minecraft:time_since_death",
+                  "value": 0
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "cdm:death"
+    }
+  }

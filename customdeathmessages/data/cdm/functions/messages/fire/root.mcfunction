@@ -1,0 +1,1 @@
+data modify storage cdm:messages fire.root set value ['{"nbt":"entity.victim", "storage":"cdm:data", "interpret":true, "extra":[{"text":" went up in flames", "color":"white", "insertion":"","clickEvent":{"action":"suggest_command","value":""}, "hoverEvent":{"action":"show_text","contents":""}}]}']

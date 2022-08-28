@@ -1,0 +1,1 @@
+data modify storage cdm:messages combat.root set value ['{"nbt":"entity.victim", "storage":"cdm:data", "interpret":true, "extra":[{"text":" was killed", "color":"white", "insertion":"","clickEvent":{"action":"suggest_command","value":""}, "hoverEvent":{"action":"show_text","contents":""}}]}']

@@ -1,0 +1,297 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:polished_blackstone_button",
+              "functions": [
+                {
+                  "function": "minecraft:set_nbt",
+                  "tag": "{cdmPlayerDeath:1b}"
+                },
+                {
+                  "function": "minecraft:set_lore",
+                  "entity": "this",
+                  "lore": [
+                    {
+                      "selector": "@s"
+                    }
+                  ]
+                },
+                {
+                  "function": "minecraft:set_lore",
+                  "entity": "killer",
+                  "lore": [
+                    {
+                      "selector": "@s"
+                    }
+                  ]
+                },
+                {
+                  "function": "minecraft:set_lore",
+                  "entity": "direct_killer",
+                  "lore": [
+                    {
+                      "selector": "@s"
+                    }
+                  ]
+                },
+                {
+                  "function": "minecraft:copy_nbt",
+                  "source": "killer",
+                  "ops": [
+                    {
+                      "source": "Pos",
+                      "target": "cdmKillerPos",
+                      "op": "replace"
+                    }
+                  ]
+                },
+                {
+                  "function": "minecraft:copy_nbt",
+                  "source": "this",
+                  "ops": [
+                    {
+                      "source": "Pos",
+                      "target": "cdmVictimPos",
+                      "op": "replace"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "combat",
+          "target": "event",
+          "op": "replace"
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "explosion",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_explosion": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "suffocation",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "bypasses_armor": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "fall",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "cdm.fall": {
+              "min": 1
+            }
+          }
+        },
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "bypasses_armor": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "magic",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_magic": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "projectile",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_projectile": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "lightning",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_lightning": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "fire",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_fire": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "void",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "bypasses_invulnerability": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "cdm:messages"
+      },
+      "ops": [
+        {
+          "source": "starvation",
+          "target": "event",
+          "op": "replace"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "bypasses_magic": true
+          }
+        }
+      ]
+    }
+  ]
+}

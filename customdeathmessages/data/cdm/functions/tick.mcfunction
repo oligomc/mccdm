@@ -1,0 +1,1 @@
+scoreboard players reset @a[scores={cdm.fall=1..}] cdm.fall

@@ -1,0 +1,1 @@
+data modify storage cdm:messages suffocation.root set value ['{"nbt":"entity.victim", "storage":"cdm:data", "interpret":true, "extra":[{"text":" suffocated in a wall", "color":"white", "insertion":"","clickEvent":{"action":"suggest_command","value":""}, "hoverEvent":{"action":"show_text","contents":""}}]}']

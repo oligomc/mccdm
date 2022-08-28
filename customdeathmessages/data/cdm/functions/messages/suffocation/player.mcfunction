@@ -1,0 +1,1 @@
+data modify storage cdm:messages suffocation.player set value ['{"nbt":"entity.victim", "storage":"cdm:data", "interpret":true, "extra":[{"text":" suffocated whilst fighting ", "color":"white", "insertion":"","clickEvent":{"action":"suggest_command","value":""}, "hoverEvent":{"action":"show_text","contents":""}}, {"nbt":"entity.killer", "storage":"cdm:data", "interpret":true}]}']

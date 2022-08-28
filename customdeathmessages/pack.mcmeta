@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 10,
+    "description": "Create custom death messages in JSON text format"
+  }
+}
